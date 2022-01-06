@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FilRouge.Model
 {
@@ -16,6 +17,9 @@ namespace FilRouge.Model
         public DateTime DateCreation { get { return dateCreation; } set { dateCreation = value; } }
 
         public string CodeContent { get { return codeContent; } set { codeContent = value; } }
+
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
 
         public virtual Question Question { get; set; }
 
