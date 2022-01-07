@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FilRouge.Interfaces
 {
-    interface IRepository<T>
+    public interface IRepository<T>
     {
         T Get(int id);
         List<T> GetAll();
