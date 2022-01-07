@@ -37,7 +37,7 @@ namespace FilRouge.Repositories
 
         public User SearchOne(System.Linq.Expressions.Expression<Func<User, bool>> searchMethode)
         {
-            throw new NotImplementedException();
+            return _dataContext.Users.SingleOrDefault(searchMethode);
         }
 
         public bool Update()

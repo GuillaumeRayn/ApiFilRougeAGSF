@@ -1,5 +1,6 @@
 ﻿using FilRouge.Interfaces;
 using FilRouge.Model;
+using FilRouge.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FilRouge.Controllers
@@ -17,9 +18,9 @@ namespace FilRouge.Controllers
         }
 
         [HttpPost]
-        public IActionResult SubmitFormLogin([FromForm] string login, [FromForm] string password)
+        public IActionResult SubmitFormLogin([FromForm] string userName, [FromForm] string password)
         {
-            string token = _loginService.GenerateToken(login, password);
+            string token = _loginService.GenerateToken(userName, password);
             if (token != null)
             {
                 return Ok(new { Token = token });
