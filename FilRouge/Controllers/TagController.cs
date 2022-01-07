@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace FilRouge.Controllers
 {
-    public class TagController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class TagController : ControllerBase
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
     }
 }
