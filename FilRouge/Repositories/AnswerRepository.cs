@@ -26,6 +26,11 @@ namespace FilRouge.Repositories
             return _dataContext.Answers.ToList();
         }
 
+        public List<Answer> GetAllByQuestion(int id)
+        {
+            return _dataContext.Answers.Where(a => a.QuestionId == id).ToList();
+        }
+
         public Answer Save(Answer entity)
         {
             _dataContext.Answers.Add(entity);

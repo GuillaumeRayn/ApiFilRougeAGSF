@@ -21,7 +21,11 @@ namespace FilRouge.Model
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
 
+        public int UserId { get; set; }
+
+        [ForeignKey("QuestionId")]
         public virtual Question Question { get; set; }
 
+        public int QuestionId { get; set; }
     }
 }

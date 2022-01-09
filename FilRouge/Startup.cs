@@ -38,7 +38,7 @@ namespace FilRouge
             //Session et Token
             services.AddHttpContextAccessor();
             services.AddSession();
-
+            services.AddMvc();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {

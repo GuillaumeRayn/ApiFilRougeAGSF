@@ -4,6 +4,7 @@ using FilRouge.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace FilRouge.Repositories
@@ -30,12 +31,12 @@ namespace FilRouge.Repositories
             return entity;
         }
 
-        public List<User> Search(System.Linq.Expressions.Expression<Func<User, bool>> searchMethode)
+        public List<User> Search(Expression<Func<User, bool>> searchMethode)
         {
             return _dataContext.Users.Where(searchMethode).ToList();
         }
 
-        public User SearchOne(System.Linq.Expressions.Expression<Func<User, bool>> searchMethode)
+        public User SearchOne(Expression<Func<User, bool>> searchMethode)
         {
             return _dataContext.Users.SingleOrDefault(searchMethode);
         }
