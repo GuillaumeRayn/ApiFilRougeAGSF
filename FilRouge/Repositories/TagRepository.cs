@@ -40,7 +40,7 @@ namespace FilRouge.Repositories
 
         public Tag SearchOne(System.Linq.Expressions.Expression<Func<Tag, bool>> searchMethode)
         {
-            throw new NotImplementedException();
+            return _dataContext.Tags.SingleOrDefault(searchMethode);
         }
 
         public bool Update()
