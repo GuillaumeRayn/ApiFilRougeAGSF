@@ -61,6 +61,18 @@ namespace FilRouge
                     police.RequireClaim(ClaimTypes.Role, "connected");
                 });
             });
+
+            services.AddCors(options => {
+                options.AddPolicy("allConnections", builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                });
+
+                options.AddPolicy("specialOrigin", builder =>
+                {
+                    builder.WithMethods("POST").WithOrigins("http://localhost:3000");
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,6 +84,8 @@ namespace FilRouge
             }
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthentication();
 
